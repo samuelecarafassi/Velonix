@@ -45,7 +45,7 @@ def main():
 
     report.append(
         "## Methodology\n"
-        "NIST CSF 2.0 + ISO 27005 + ENISA Threat Landscape 2024 + MITRE ATT&CK\n"
+        "NIST CSF 2.0 + ISO 27005 + ENISA Threat Landscape 2025 + MITRE ATT&CK\n"
     )
 
     report.append("\n# Executive Summary\n")

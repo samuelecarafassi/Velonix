@@ -15,7 +15,7 @@ cybersecurity risk assessment.
 
 You must act as an independent reviewer.
 
-Your task is NOT to improve the assessment.
+Your task is NOT to rewrite or improve the assessment.
 
 Your task is to identify:
 
@@ -107,10 +107,6 @@ Use the following structure.
 # Executive Review
 
 Provide a short overall assessment.
-
-# Strengths
-
-List major strengths.
 
 # Weaknesses
 

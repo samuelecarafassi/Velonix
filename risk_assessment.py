@@ -5,6 +5,7 @@ from config import (
     COMPANY_CONTEXT,
     COMPANY_SECTOR,
     REGULATORY_CONTEXT,
+    ASSETS
 )
 
 from enisa_threats import get_threat_summary_for_prompt
@@ -20,10 +21,12 @@ Rules:
 - Use NIST CSF 2.0 references.
 - Use ISO 27005 likelihood (1-5) × impact (1-5).
 - Always distinguish inherent and residual risk.
-- Reference ENISA ETL 2024 categories where relevant.
+- Reference ENISA ETL 2025 categories where relevant.
 - Consider GDPR, NIS2, UNECE WP.29 R155/R156 and ISO/SAE 21434.
-- Format tables in markdown.
+- Format tables in markdown (.md file).
 - Be concise but complete.
+- Respond immediately with the final output
+- Do not include conversational filler, introductory remarks, transition phrases, or closing commentary
 """
 
 
@@ -73,12 +76,13 @@ Requirements:
 - Flag crown jewels with ⭐.
 - Flag legacy/EOL systems with ⚠️.
 - Use NIST ID.AM references.
-"""
+
+""" + ASSETS
     ),
     (
         "phase2_threats.md",
         f"""
-Using ENISA ETL 2024 as the strategic baseline and MITRE ATT&CK
+Using ENISA ETL 2025 as the strategic baseline and MITRE ATT&CK
 for technical precision, identify the top 8 threats for Velonix.
 
 {get_threat_summary_for_prompt(COMPANY_SECTOR)}
@@ -187,7 +191,7 @@ Board-focused:
 ]
 
 
-def main():
+if __name__ == "__main__":
     context = ""
 
     for filename, prompt in PHASES:
@@ -204,7 +208,3 @@ def main():
         context += f"\n\n# {filename}\n{output}\n"
 
     print("Assessment completed.")
-
-
-if __name__ == "__main__":
-    main()

@@ -1,17 +1,18 @@
 # enisa_threats.py
-# Source: ENISA Threat Landscape 2024 (October 2024)
-# Reporting period: June 2023 – June 2024
+# Source: ENISA Threat Landscape 2025 (October 2025)
+# Reporting period: July 2024 – June 2025
 # Manually curated for the automotive / manufacturing sector.
 
-ENISA_ETL_2024_AUTOMOTIVE = {
-    "report": "ENISA Threat Landscape 2024",
-    "published": "October 2024",
+ENISA_ETL_2025_AUTOMOTIVE = {
+    "report": "ENISA Threat Landscape 2025",
+    "published": "October 2025",
     "sector_notes": (
-        "Automotive/manufacturing is increasingly targeted due to OT/IT convergence, "
-        "connected vehicle attack surfaces, and high-value IP (firmware, design data). "
-        "Supply chain attacks against Tier 1 suppliers are explicitly flagged as a "
-        "rising priority in ETL 2024. Ransomware on OT environments causes production "
-        "halts with direct financial and safety impact."
+        "The manufacturing sector (including automotive) rose from 7th to 4th place among "
+        "NIS2 sectors compared to ETL 2024, accounting for 2.9% of total incidents. Within "
+        "identified subsectors, there is a clear targeting focus on automotive and defence "
+        "entities. Cybercrime is the primary threat to manufacturing, driving 59.3% of sector "
+        "activity and the highest impact, while hacktivism (39.3% of activities) frequently "
+        "targets operational technology (OT) systems and subsector websites."
     ),
     "threats": [
         {
@@ -22,8 +23,9 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1486", "T1566", "T1190"],
             "attack_tactics": ["Impact", "Initial Access"],
             "sector_note": (
-                "Manufacturing is the second most targeted sector globally. "
-                "OT ransomware causes production halts and safety risks."
+                "Remains at the core of intrusion activity. In the manufacturing sector, "
+                "the most frequently deployed ransomware strains are Akira (48.7%), "
+                "Qilin (20.5%), and FOG (10.3%), causing severe business continuity disruptions."
             ),
         },
         {
@@ -34,8 +36,9 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1555", "T1539", "T1485"],
             "attack_tactics": ["Credential Access", "Impact"],
             "sector_note": (
-                "Infostealers targeting R&D environments to exfiltrate "
-                "firmware source code and design IP."
+                "Part of the dominant cybercriminal activity (59.3%) targeting manufacturing. "
+                "State-aligned threat groups also leverage stealthy malware frameworks and "
+                "exploit signed drivers to maintain persistent access to infrastructure."
             ),
         },
         {
@@ -46,8 +49,9 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1566.001", "T1566.002"],
             "attack_tactics": ["Initial Access"],
             "sector_note": (
-                "LLM-generated spear-phishing campaigns against engineers "
-                "with access to ECU signing credentials."
+                "Phishing continues to be the dominant primary intrusion vector overall (60%). "
+                "By early 2025, AI-supported phishing campaigns escalated dramatically, "
+                "representing over 80% of observed social engineering activity globally."
             ),
         },
         {
@@ -58,8 +62,8 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1530", "T1048", "T1213"],
             "attack_tactics": ["Collection", "Exfiltration"],
             "sector_note": (
-                "Vehicle telemetry constitutes personal data under GDPR. "
-                "Exfiltration of OEM integration data risks contractual breach."
+                "Data breaches constitute a significant portion of cybercrime impact within "
+                "manufacturing, accounting for 20.5% of the sector's reported incidents."
             ),
         },
         {
@@ -70,8 +74,9 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1498", "T1499"],
             "attack_tactics": ["Impact"],
             "sector_note": (
-                "DDoS against VeloFleet API would disrupt OEM diagnostics "
-                "and OTA update delivery to 340,000 vehicles."
+                "Hacktivist activities represent 39.3% of the sector's threats. Websites "
+                "within the automotive and defence subsectors are heavily targeted, making up "
+                "45.8% of all manufacturing targeting by hacktivist groups."
             ),
         },
         {
@@ -82,9 +87,9 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1195.002", "T1199", "T1601"],
             "attack_tactics": ["Initial Access"],
             "sector_note": (
-                "ETL 2024 explicitly flags Tier 1 automotive suppliers as "
-                "pivot points into OEM networks. Firmware tampering via "
-                "compromised build pipelines is a named emerging threat."
+                "State-aligned threat groups have intensified long-term cyberespionage "
+                "campaigns targeting EU manufacturing and logistics, demonstrating advanced "
+                "tradecraft such as supply chain compromise and open-source repository abuse."
             ),
         },
         {
@@ -95,8 +100,9 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1565", "T1195.002"],
             "attack_tactics": ["Resource Development"],
             "sector_note": (
-                "Manipulation of diagnostic telemetry data could mislead "
-                "OEM maintenance decisions at scale."
+                "Foreign Information Manipulation and Interference (FIMI) campaigns frequently "
+                "aim to publicly link manufacturers to geopolitical conflicts, using "
+                "AI-assisted tools like voice cloning and AI-operated botnets (e.g., Green Cicada)."
             ),
         },
         {
@@ -107,8 +113,8 @@ ENISA_ETL_2024_AUTOMOTIVE = {
             "attack_techniques": ["T1078", "T1048"],
             "attack_tactics": ["Exfiltration", "Collection"],
             "sector_note": (
-                "180 external contractors with VPN access and no MFA "
-                "represent a significant insider/privilege-abuse surface."
+                "Unauthorised access by insider threats accounts for a small but still meaningful "
+                "share (0.8%) of observed initial intrusion vectors across the landscape."
             ),
         },
     ],
@@ -117,12 +123,12 @@ ENISA_ETL_2024_AUTOMOTIVE = {
 
 def get_threat_summary_for_prompt(sector: str) -> str:
     """
-    Returns a formatted string summarising ENISA ETL 2024 threats
+    Returns a formatted string summarising ENISA ETL 2025 threats
     for the given sector, ready to be injected into a Phase 2 prompt.
     """
-    data = ENISA_ETL_2024_AUTOMOTIVE  # extend with other sectors if needed
+    data = ENISA_ETL_2025_AUTOMOTIVE  # extend with other sectors if needed
     lines = [
-        f"## ENISA ETL 2024 — Threat Intelligence ({sector} sector)",
+        f"## ENISA ETL 2025 — Threat Intelligence ({sector} sector)",
         f"Source: {data['report']} | Published: {data['published']}",
         f"Sector context: {data['sector_notes']}",
         "",

@@ -1,34 +1,64 @@
-### ISO 27005 Risk Assessment
+```markdown
+## ISO 27005 Risk Assessment for Velonix S.p.A.
 
-#### Risk Analysis
+### Risk Assessment Table
 
-| Risk ID | Threat | Likelihood (1-5) | Impact (1-5) | Inherent Risk (5-25)[6D[K
-(5-25) | Existing Controls | Residual Risk (5-25) | Owner | Risk Class |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| R001 | Ransomware targeting legacy MES system | 3 | 4 | 12 | Upgrade to s[1D[K
-supported version with security patches and backups | 8 | IT | Medium |
-| R002 | Supply chain attack tampering firmware in CI/CD pipeline | 3 | 5 |[1D[K
-| 15 | Implement HSM for secure key management and automated build processe[8D[K
-processes | 9 | DevOps | High |
-| R003 | Social engineering spear-phishing targeting contractors with acces[5D[K
-access to ECU signing keys | 4 | 5 | 20 | Enforce MFA for all contractors a[1D[K
-and strict access controls | 10 | IT | High |
-| R004 | Data exfiltration of personal data from VeloLink telemetry through[7D[K
-through unsecured third-party SaaS | 3 | 5 | 15 | Ensure secure communicati[11D[K
-communication protocols, network segmentation, and regular audits | 9 | IT [K
-| High |
-| R005 | DDoS attack on Azure IoT Hub for VeloLink Devices | 4 | 4 | 16 | I[1D[K
-Implement DDoS mitigation services and robust availability protection mecha[5D[K
-mechanisms | 8 | DevOps | Medium-High |
+| Risk ID | Threat                                                         [K
+        | Likelihood (1-5) | Impact (1-5) | Inherent Risk (1-25) | Existing[8D[K
+Existing Controls                                      | Residual Risk (1-2[4D[K
+(1-25) | Owner         | Risk Class       |
+|---------|----------------------------------------------------------------|---------|------------------------------------------------------------------------|------------------|--------------|----------------------|-----------------|------------------|--------------|----------------------|--------------------------------------------------------|---------------------|----------------------------------------------------|---------------------|---------------|------------------|
+| R001    | Ransomware targeting SAP S/4HANA, Legacy MES, VeloFleet diagnos[7D[K
+diagnostics API, Vehicle telemetry DB | 3                | 5            | 1[1D[K
+15                   | PR.A                                                [K
+   | 9                   | IT Department   | High             |
+| R002    | Malware affecting R&D source code repo, CI/CD pipeline, OTA sig[3D[K
+signing workstation, VeloECU firmware | 3                | 4            | 1[1D[K
+12                   | PR.D                                                [K
+   | 7                   | R&D Team        | Medium           |
+| R003    | Social Engineering targeting VPN gateway, VeloFleet diagnostics[11D[K
+diagnostics API, CI/CD pipeline, Legacy MES | 3                | 5         [K
+   | 15                   | ID.RA                                          [K
+        | 9                   | IT Department   | High             |
+| R004    | Data Threats targeting Vehicle telemetry DB, AI diagnostic mode[4D[K
+model, VeloLink V2X gateway | 4                | 5            | 20         [K
+          | PR.PT                                                  | 13    [K
+              | IT Department   | Very High        |
+| R005    | Availability Attacks (DDoS) on network infrastructure and OT eq[2D[K
+equipment | 4                | 3            | 12                   | ID.RA,[6D[K
+ID.RA, PR.A                                              | 8               [K
+    | Security Team   | Medium           |
+| R006    | Supply Chain Attacks targeting Third-party SaaS and Legacy MES [K
+| 3                | 5            | 15                   | PR.D            [K
+                                       | 9                   | IT Departmen[9D[K
+Department   | High             |
+| R007    | Information Manipulation on public facing platforms and VeloFle[7D[K
+VeloFleet diagnostics API | 2                | 4            | 8            [K
+        | ID.RA                                                  | 3       [K
+            | Security Team   | Low              |
+| R008    | Insider Threats affecting all assets, particularly those with r[1D[K
+restricted access | 4                | 5            | 20                   [K
+| PR.D                                                   | 15              [K
+    | IT Department   | Very High        |
 
-#### Residual-Risk Heat Map
+### Residual-Risk Heat Map
 
+```markdown
++-----------------+-----------------+-----------------+
+|                 | Medium          | High            |
+|                 +-----------------+-----------------+
+| Low             |                 | R007 (Information Manipulation)      [K
+ |
+|                 +-----------------+-----------------+
+| Medium          | R003 (Social Engineering)           | R001 (Ransomware)[12D[K
+(Ransomware)       |
+|                 +-----------------+-----------------+
+| High            | R002 (Malware), R008 (Insider Threats)| R006 (Supply Ch[2D[K
+Chain Attacks)|
+|                 +-----------------+-----------------+
+| Very High       | R004 (Data Threats), R005 (Availability Attacks) | R008[4D[K
+R008 (Insider Threats) |
++-----------------+-----------------+-----------------+
 ```
-      High       Medium-High    Medium     Low
-|___________________________|
-High         R003, R004        R001, R005  
-Medium-High  R002              
-Medium           
-Low                
 ```
 

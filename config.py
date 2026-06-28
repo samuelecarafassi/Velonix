@@ -34,3 +34,35 @@ Applicable regulations for Velonix S.p.A.:
 - ISO/IEC 27001:2022: Velonix is certified. Assessment findings
   must align with existing ISMS scope.
 """
+ASSETS = """
+Known systems and components to include in the inventory (expand with
+reasonable, clearly-labelled inferred assets where needed, e.g. databases,
+network devices, or supporting services typical of this architecture):
+
+On-prem Turin HQ:
+- SAP S/4HANA ERP
+- Legacy MES (Windows Server 2016, plant floor control)
+- Active Directory / DNS
+- R&D source code repository (firmware, design files)
+- CI/CD pipeline (GitHub Enterprise)
+- OTA signing workstation (holds private signing key, no HSM)
+
+Azure EU — VeloFleet platform:
+- VeloFleet diagnostics API
+- Vehicle telemetry database (~340,000 vehicles, PII/GDPR scope)
+- AI diagnostic model (proprietary)
+- OTA firmware distribution service
+
+OT / plant floor (Turin, Kraków):
+- PLCs and industrial robots
+- MES-to-OT integration layer
+
+Connected fleet edge:
+- VeloLink V2X telematics gateway (deployed in vehicles)
+- VeloECU engine control unit firmware
+
+Third-party / IAM:
+- Okta IAM
+- Palo Alto NGFW/SIEM
+- VPN gateway (180 external contractors, no MFA enforced)
+"""
