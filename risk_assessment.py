@@ -1,4 +1,5 @@
-import subprocess
+import json
+import urllib.request
 from pathlib import Path
 
 from config import (
@@ -21,7 +22,7 @@ Rules:
 - Use NIST CSF 2.0 references.
 - Use ISO 27005 likelihood (1-5) × impact (1-5).
 - Always distinguish inherent and residual risk.
-- Reference ENISA ETL 2025 categories where relevant.
+- Reference ENISA ETL 2025 categories where relevant.D
 - Consider GDPR, NIS2, UNECE WP.29 R155/R156 and ISO/SAE 21434.
 - Format tables in markdown (.md file).
 - Be concise but complete.
@@ -47,18 +48,27 @@ def ask_ai(prompt: str, context: str = "",model_name = "qwen2.5-coder:7b") -> st
 {prompt}
 """
      
-    result = subprocess.run(
-        ["ollama", "run", model_name],
-        input=full_prompt,
-        capture_output=True,
-        text=True,
-    )
-
+    # Configure a clean HTTP API request to the local Ollama instance
+    url = "http://localhost:11434/api/generate"
+    payload = {
+        "model": model_name,
+        "prompt": full_prompt,
+        "stream": False  # disables streaming animation codes
+    }
     
-    if result.returncode != 0:
-        raise RuntimeError(result.stderr)
+    headers = {"Content-Type": "application/json"}
+    data = json.dumps(payload).encode("utf-8")
+    
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            res_body = json.loads(response.read().decode("utf-8"))
+            return res_body["response"]
+    except Exception as e:
+        raise RuntimeError(f"Ollama API request failed: {e}")
 
-    return result.stdout
+    return ""
 
 
 PHASES = [

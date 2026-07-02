@@ -1,66 +1,37 @@
-### 12-Month Remediation Roadmap
+# Executive Summary
 
-#### Initiative 1: Implement MFA for All External Contractor Access
-- **Timeline:** January - March (1 month)
-- **Risks Addressed:** R004 (Data Threats), R005 (Availability Attacks)
-- **NIST Controls:** CM, PR.A
-- **Estimated Cost:** $50k
-- **FTE:** 2
-- **KPI:** Completion of MFA implementation for all external contractors
-
-#### Initiative 2: Enforce OT/IT Segmentation
-- **Timeline:** April - June (3 months)
-- **Risks Addressed:** R006 (Supply Chain Attacks), R004 (Data Threats)
-- **NIST Controls:** AC, PR.PT
-- **Estimated Cost:** $80k
-- **FTE:** 3
-- **KPI:** Successful implementation of comprehensive OT/IT segmentation
-
-#### Initiative 3: Implement SBOM for Firmware Components
-- **Timeline:** July - September (3 months)
-- **Risks Addressed:** R001 (Ransomware), R006 (Supply Chain Attacks)
-- **NIST Controls:** AC, ID.AM
-- **Estimated Cost:** $70k
-- **FTE:** 2
-- **KPI:** Completion of SBOM implementation for all firmware components
-
-#### Initiative 4: Use HSM for Firmware Signing
-- **Timeline:** October - December (3 months)
-- **Risks Addressed:** R001 (Ransomware), R007 (Information Manipulation)
-- **NIST Controls:** CM, PR.D
-- **Estimated Cost:** $60k
-- **FTE:** 2
-- **KPI:** Successful implementation of HSM for firmware signing
-
-#### Initiative 5: Enforce Compensating Controls for Legacy MES
-- **Timeline:** January - March (3 months)
-- **Risks Addressed:** R001 (Ransomware), R008 (Insider Threats)
-- **NIST Controls:** CM, PR.A
-- **Estimated Cost:** $50k
-- **FTE:** 2
-- **KPI:** Successful implementation of compensating controls for Legacy ME[2D[K
-MES
-
-### Executive Summary
-
-**Top 3 Risks:**
-1. R004 (Data Threats)
-2. R006 (Supply Chain Attacks)
-3. R008 (Insider Threats)
+**Top Risks:**
+1. **Ransomware targeting Legacy MES (R001)** - High risk, potential loss of control over critical systems.
+2. **Supply chain compromise through open-source repository abuse (R004)** - Very high risk, significant impact on product security.
+3. **Data exfiltration from vehicle telemetry database (R005)** - Medium risk, severe regulatory penalties and customer trust damage.
 
 **Regulatory Exposure:**
-- GDPR (Art. 83) - Enhanced protection for personal data.
-- NIS2 - Mandates higher security standards for critical infrastructure.
-- UNECE R155/R156 - Requires enhanced information security and risk managem[7D[K
-management.
+- Compliance with GDPR, UNECE R155/R156, ISO/SAE 21434, and NIS2 required for various controls to ensure ongoing compliance.
 
 **Cost of Inaction:**
-- Potential financial penalties from regulatory bodies.
-- Increased operational disruptions affecting essential services.
+- Potential financial fines up to €40M (GDPR max fine + NIS2 maximum fine).
+- Operational disruptions, loss of business continuity, and damage to reputation.
 
 **Investment Request:**
-- Total Estimated Cost: $290k
-- Justification: Immediate implementation of these initiatives will signifi[7D[K
-significantly mitigate high-risk vulnerabilities, comply with regulatory re[2D[K
-requirements, and enhance overall security posture.
+- Total estimated investment: €500k for controls over 12 months.
+- Key initiatives include upgrading Legacy MES, implementing HSMs, MFA enforcement, and network segmentation.
 
+---
+
+# 12-Month Remediation Roadmap
+
+| Initiative | Timeline | Risks Addressed | NIST Controls | Estimated Cost | FTE Required | KPI |
+|------------|----------|-----------------|---------------|----------------|--------------|-----|
+| **Upgrade Legacy MES** | Month 1-2 | R001, V001 | PR, PE, PO | €150k | 3 | Complete implementation within 2 weeks |
+| **Implement HSM for OTA keys** | Month 3-5 | R008, V002 | PR, PM, PS, PO | €200k | 4 | Hardware security module fully operational within 3 weeks |
+| **Enforce MFA for all users** | Month 6 | R002, R005, R007 | ID.AM, ID.RA, PI, PR | €100k | 2 | Multi-factor authentication enabled for all users in 1 week |
+| **Create and maintain SBOM for firmware** | Month 7-8 | R004, V003 | ID.AM, ID.PA, PI, PM, PS, PO | €50k | 3 | Software Bill of Materials fully documented within 4 weeks |
+| **Implement robust network segmentation** | Month 9-12 | R003, R006 | PI, PR, PM, PS, PO | €100k | 4 | Network segmentation complete by end of 4th month |
+
+Total Estimated Cost: €500k
+FTE Required: 14
+KPIs:
+- Completion of all initiatives within specified timelines.
+- Reduction in risk scores to below predefined thresholds by the end of each quarter.
+
+This roadmap prioritizes critical controls that address high and very high-risk vulnerabilities, ensuring compliance with relevant regulations while minimizing business disruption.

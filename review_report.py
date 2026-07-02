@@ -1,5 +1,6 @@
 from pathlib import Path
-import subprocess
+import json
+import urllib.request
 
 from config import (
     COMPANY_CONTEXT,
@@ -39,17 +40,27 @@ Output markdown.
 
 def ask_ai(prompt: str,model_name = "qwen2.5-coder:7b") -> str:
 
-    result = subprocess.run(
-        ["ollama", "run",model_name],
-        input=prompt,
-        capture_output=True,
-        text=True,
-    )
+    # Configure a clean HTTP API request to the local Ollama instance
+    url = "http://localhost:11434/api/generate"
+    payload = {
+        "model": model_name,
+        "prompt": prompt,
+        "stream": False  # disables streaming animation codes
+    }
+    
+    headers = {"Content-Type": "application/json"}
+    data = json.dumps(payload).encode("utf-8")
+    
+    req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            res_body = json.loads(response.read().decode("utf-8"))
+            return res_body["response"]
+    except Exception as e:
+        raise RuntimeError(f"Ollama API request failed: {e}")
 
-    if result.returncode != 0:
-        raise RuntimeError(result.stderr)
-
-    return result.stdout
+    return ""
 
 
 def load_assessment():

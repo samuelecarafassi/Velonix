@@ -1,77 +1,28 @@
 ```markdown
-## Top Risks Remediation Plan
+| Control                                  | NIST CSF Reference         | Priority   | Effort   | Regulatory Benefit                                                                 |
+|------------------------------------------|----------------------------|------------|----------|----------------------------------------------------------------------------------|
+| Upgrade Legacy MES to a supported OS/version| PR, PE, PO                   | High       | 2 weeks  | Compliance with UNECE R155/R156 and NIS2                                         |
+| Implement HSM for OTA keys                | PR, PM, PS, PO               | High       | 3 weeks  | Compliance with GDPR, ISO/SAE 21434, and UNECE R155/R156                         |
+| Enforce MFA for all users                   | ID.AM, ID.RA, PI, PR         | Medium     | 1 week   | Compliance with GDPR, NIS2, and ISO/SAE 21434                                   |
+| Create and maintain SBOM for firmware       | ID.AM, ID.PA, PI, PM, PS, PO   | High       | 4 weeks  | Compliance with UNECE R155/R156 and ISO/SAE 21434                               |
+| Implement robust network segmentation       | PI, PR, PM, PS, PO            | Very High  | 4 weeks  | Compliance with GDPR, NIS2, and ISO/SAE 21434                                   |
 
-### 5 Quick Wins (< 2 Weeks)
+**Regulatory Exposure Summary**
 
-1. **Implement MFA for All External Contractor Access**
-   - **Control:** CM, PR.A
-   - **NIST CSF Reference:** PR.D
-   - **Priority:** High
-   - **Effort:** Low
-   - **Regulatory Benefit:** GDPR (Art. 83), NIS2
+- **GDPR**: Risk reduction through MFA for external contractors (R002), which mitigates data exposure risks.
+- **NIS2**: Improved segmentation reduces the risk of OT/IT breaches impacting vehicle telemetry data (R005).
+- **UNECE R155/R156**: Compliance with enhanced cybersecurity controls, including OTA signing and network segmentation.
 
-2. **Enforce OT/IT Segmentation**
-   - **Control:** AC, PR.PT
-   - **NIST CSF Reference:** PR.PT
-   - **Priority:** High
-   - **Effort:** Medium
-   - **Regulatory Benefit:** UNECE R155/R156, NIS2
+**UNECE R155/R156 Mapping**
 
-3. **Implement SBOM for Firmware Components**
-   - **Control:** AC, ID.AM
-   - **NIST CSF Reference:** ID.AM
-   - **Priority:** High
-   - **Effort:** Medium
-   - **Regulatory Benefit:** UNECE R155/R156
+- UNECE R155: Enhanced controls for managing security of critical systems, including Legacy MES (V001) and R&D source code repository (V003).
+- UNECE R156: OTA signing and network segmentation fall under enhanced cybersecurity measures.
 
-4. **Use HSM for Firmware Signing**
-   - **Control:** CM, PR.D
-   - **NIST CSF Reference:** PR.D
-   - **Priority:** High
-   - **Effort:** Medium
-   - **Regulatory Benefit:** UNECE R155/R156
+**NIS2 Mapping**
 
-5. **Enforce Compensating Controls for Legacy MES**
-   - **Control:** CM, PR.A
-   - **NIST CSF Reference:** PR.A
-   - **Priority:** High
-   - **Effort:** Medium
-   - **Regulatory Benefit:** UNECE R155/R156
+- NIS2: Enhanced controls include MFA enforcement (R002), network segmentation (R003, R005, R006), and HSM implementation for OTA keys (R008).
 
-### Regulatory Exposure Summary
+**GDPR Mapping**
 
-- **GDPR (Art. 83):** Enhanced protection for personal data.
-- **NIS2:** Mandates higher security standards for critical infrastructure.[15D[K
-infrastructure.
-- **UNECE R155/R156:** Requires enhanced information securit[7D[K
-security and risk management.
-
-### UNECE R155/R156 Mapping
-
-- **R002 (Malware):** UNECE R155/R156 requires controls over the supply cha[3D[K
-chain and data protection.
-- **R003 (Social Engineering):** UNECE R155/R156 mandates risk assessment a[1D[K
-and mitigation of security threats.
-- **R004 (Data Threats):** UNECE R155/R156 requires encryption and access c[1D[K
-controls for sensitive data.
-
-### NIS2 Mapping
-
-- **R001 (Ransomware):** NIS2 mandates protection against cyberattacks affe[4D[K
-affecting essential services.
-- **R003 (Social Engineering):** NIS2 requires risk assessment and mitigati[8D[K
-mitigation of security threats.
-- **R004 (Data Threats):** NIS2 mandates encryption and access controls for[3D[K
-for sensitive data.
-
-### GDPR Mapping
-
-- **R001 (Ransomware):** GDPR applies to processing of personal data, which[5D[K
-which could be affected by ransomware attacks.
-- **R003 (Social Engineering):** GDPR requires risk assessment and mitigati[8D[K
-mitigation of security threats.
-- **R004 (Data Threats):** GDPR mandates encryption and access controls for[3D[K
-for sensitive data.
-
+- GDPR: MFA enforcement reduces risks associated with data breaches affecting vehicle telemetry data (R005).
 ```
-
