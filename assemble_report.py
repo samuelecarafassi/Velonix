@@ -35,10 +35,6 @@ def extract_executive_summary(text):
 
 
 def main():
-
-    roadmap = read_file("phase6_roadmap.md")
-    executive_summary = extract_executive_summary(roadmap)
-
     report = []
 
     report.append("# Velonix S.p.A. Cybersecurity Risk Assessment\n")
@@ -48,8 +44,6 @@ def main():
         "NIST CSF 2.0 + ISO 27005 + ENISA Threat Landscape 2025 + MITRE ATT&CK\n"
     )
 
-    report.append("\n# Executive Summary\n")
-    report.append(executive_summary)
 
     for title, filename in ORDER:
 
