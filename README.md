@@ -14,7 +14,7 @@ The methodology combines four complementary frameworks:
 |------|-----------|
 | Process structure | NIST CSF 2.0 |
 | Risk scoring | ISO 27005 (5×5 matrix) |
-| Threat intelligence | ENISA Threat Landscape 2024 |
+| Threat intelligence | ENISA Threat Landscape 2025 |
 | Technical attack detail | MITRE ATT&CK v14 |
 
 Regulatory context (UNECE WP.29, ISO/SAE 21434, NIS2, GDPR, ISO 27001) is injected into Phases 5 and 6 only.
