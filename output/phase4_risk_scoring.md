@@ -1,21 +1,43 @@
-```markdown
-| Risk ID | Threat Description | Likelihood (1-5) | Impact (1-5) | Inherent Risk | Existing Controls | Residual Risk | Owner | Risk Class |
-|---------|--------------------|------------------|--------------|---------------|-------------------|---------------|-------|------------|
-| R001    | Ransomware targeting the Legacy MES system | 2                | 4            | 8             | Upgrade to a supported OS/version | 6             | OT/IT | High       |
-| R002    | Malware infection through phishing emails to external contractors | 3                | 3            | 9             | Enforce Multi-Factor Authentication (MFA) for all users | 7             | IT    | Medium     |
-| R003    | DDoS attacks targeting the VeloFleet API and Azure IoT Hub | 2                | 4            | 8             | Implement robust network segmentation and isolation between OT and IT networks | 6             | IT    | High       |
-| R004    | Supply chain compromise through open-source repository abuse | 3                | 5            | 15            | Create and maintain Software Bill of Materials (SBOM) | 12            | IT    | Very High  |
-| R005    | Data exfiltration from the vehicle telemetry database | 3                | 4            | 12            | Enforce Multi-Factor Authentication (MFA) for all users | 9             | IT    | Medium     |
-| R006    | Insider threat accessing the R&D source code repository | 3                | 5            | 15            | Implement robust network segmentation and isolation between OT and IT networks | 12            | IT    | Very High  |
-| R007    | Social engineering through AI-assisted phishing campaigns | 3                | 3            | 9             | Enforce Multi-Factor Authentication (MFA) for all users | 7             | IT    | Medium     |
-| R008    | Malware in the CI/CD pipeline compromising build artifacts | 2                | 5            | 10            | Implement hardware security module (HSM) for OTA keys | 6             | IT    | High       |
+### ISO 27005 Risk Assessment
 
-**Residual-Risk Heat Map**
+| Risk ID | Threat | Likelihood (1-5) | Impact (1-5) | Inherent Risk (5) | Existing Controls | Residual Risk (3) | Owner | Risk Class |
+|---------|--------|--------------------|--------------|-------------------|-------------------|-------------------|-------|------------|
+| 1.1     | Ransomware on SAP S/4HANA ERP | 2 | 4 | 8                 | Encryption, Regular Backups | 5               | IT    | Low        |
+| 1.2     | Ransomware on CI/CD Pipeline   | 3 | 4 | 12                | Automated Security Checks | 7               | DevOps| Medium     |
+| 1.3     | Ransomware on VeloFleet API    | 2 | 4 | 8                 | Encryption, Regular Backups | 5               | DevOps| Low        |
+| 1.4     | Ransomware on Telemetry DB      | 3 | 4 | 12                | Regular Data Encryption | 7               | IT    | Medium     |
+| 2.1     | Malware on Legacy MES          | 3 | 4 | 12                | Antivirus, Security Patches | 7               | OT    | Medium     |
+| 2.2     | Malware on R&D Repository      | 3 | 4 | 12                | Antivirus, Security Patches | 7               | R&D   | Medium     |
+| 2.3     | Malware on VeloFleet API        | 3 | 4 | 12                | Encryption, Regular Backups | 7               | DevOps| Medium     |
+| 2.4     | Malware on AI Model             | 3 | 4 | 12                | Antivirus, Security Patches | 7               | R&D   | Medium     |
+| 3.1     | Social Engineering on Legacy MES | 4 | 4 | 16                | MFA, Access Controls | 9               | OT    | High       |
+| 3.2     | Social Engineering on R&D Repository | 4 | 4 | 16                | MFA, Access Controls | 9               | R&D   | High       |
+| 3.3     | Social Engineering on CI/CD Pipeline | 4 | 4 | 16                | MFA, Access Controls | 9               | DevOps| High       |
+| 3.4     | Social Engineering on VPN Gateway | 4 | 4 | 16                | MFA, Access Controls | 9               | IT    | High       |
+| 4.1     | Data Threats on Telemetry DB   | 3 | 5 | 15                | Encryption, Regular Backups | 8               | IT    | Medium     |
+| 4.2     | Data Threats on VeloFleet API    | 3 | 5 | 15                | Regular Data Encryption | 8               | DevOps| Medium     |
+| 5.1     | DDoS Attacks on VeloLink GWs   | 4 | 4 | 16                | Firewall, Load Balancers | 9               | Field Ops| High       |
+| 5.2     | DDoS Attacks on OT Plant Floor Reachable from Corporate LAN | 3 | 4 | 12                | Improved OT/IT Segmentation | 7               | IT    | Medium     |
+| 6.1     | Supply Chain Attacks on GitHub Enterprise | 4 | 5 | 20                | Regular Security Audits | 10              | DevOps| High       |
+| 6.2     | Supply Chain Attacks on Third-party SaaS (e.g., VeloFleet API) | 3 | 5 | 15                | Regular Vendor Assessments | 8               | DevOps| Medium     |
+| 7.1     | Information Manipulation on Publicly Accessible Data | 2 | 4 | 8                 | Strong Access Controls | 5               | IT    | Low        |
+| 7.2     | Information Manipulation on Social Media | 3 | 4 | 12                | Regular Monitoring | 7               | IT    | Medium     |
+| 8.1     | Insider Threats on Legacy MES   | 3 | 5 | 15                | Strong Access Controls | 9               | OT    | High       |
+| 8.2     | Insider Threats on MFA for External Contractors | 4 | 4 | 16                | Enhanced Access Controls | 10              | IT    | High       |
 
-| Risk Class     | Very High | High        | Medium      |
-|----------------|-----------|-------------|-------------|
-| R004, R006     |           |             |             |
-| R001, R003     |           |             |             |
-| R008           |           |             |             |
-| R002, R005     |           |             |             |
-```
+### Residual-Risk Heat Map
+
+| Risk Class  | Low | Medium | High |
+|-------------|-----|--------|------|
+| Ransomware    |     |        | 🟥   |
+| Malware       |     | 🟠     |      |
+| Social Engineering | 🟥  |        |      |
+| Data Threats  | 🟠  |        |      |
+| Availability Attacks | 🟥 | 🟠     |      |
+| Supply Chain Attacks | 🟥 |        |      |
+| Information Manipulation | 🟠 | 🟠    |      |
+| Insider Threats | 🟥  | 🟠    |      |
+
+**Legend:**
+- 🟥 : High Residual Risk
+- 🟠 : Medium Residual Risk

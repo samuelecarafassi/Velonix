@@ -66,3 +66,40 @@ Third-party / IAM:
 - Palo Alto NGFW/SIEM
 - VPN gateway (180 external contractors, no MFA enforced)
 """
+NIST_CSF2_CATEGORIES = """
+NIST CSF 2.0 CORE FUNCTIONS AND CATEGORIES NAMES IDENTIFIER
+
+Function: Govern (GV)
+Organizational Context | GV.OC
+Risk Management Strategy | GV.RM
+Roles, Responsibilities, and Authorities | GV.RR
+Policy | GV.PO
+Oversight | GV.OV
+Cybersecurity Supply Chain Risk Management | GV.SC
+
+Function: Identify (ID)
+Asset Management | ID.AM
+Risk Assessment | ID.RA
+Improvement | ID.IM
+
+Function: Protect (PR)
+Identity Management, Authentication, and Access Control | PR.AA
+Awareness and Training | PR.AT
+Data Security | PR.DS
+Platform Security | PR.PS
+Technology Infrastructure Resilience | PR.IR
+
+Function: Detect (DE)
+Continuous Monitoring | DE.CM
+Adverse Event Analysis | DE.AE
+
+Function: Respond (RS)
+Incident Management | RS.MA
+Incident Analysis | RS.AN
+Incident Response Reporting and Communication | RS.CO
+Incident Mitigation | RS.MI
+
+Function: Recover (RC)
+Incident Recovery Plan Execution | RC.RP
+Incident Recovery Communication | RC.CO
+"""

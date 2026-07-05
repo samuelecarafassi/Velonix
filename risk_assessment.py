@@ -6,7 +6,8 @@ from config import (
     COMPANY_CONTEXT,
     COMPANY_SECTOR,
     REGULATORY_CONTEXT,
-    ASSETS
+    ASSETS,
+    NIST_CSF2_CATEGORIES
 )
 
 from enisa_threats import get_threat_summary_for_prompt
@@ -87,7 +88,7 @@ Requirements:
 - Flag legacy/EOL systems with ⚠️.
 - Use NIST ID.AM references.
 
-""" + ASSETS
+""" + ASSETS + "\n" + NIST_CSF2_CATEGORIES
     ),
     (
         "phase2_threats.md",
@@ -106,7 +107,8 @@ MITRE Technique |
 Affected Assets |
 Threat Actor |
 NIST ID.RA Reference
-"""
+
+""" + NIST_CSF2_CATEGORIES
     ),
     (
         "phase3_vulnerabilities.md",

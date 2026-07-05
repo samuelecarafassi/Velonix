@@ -1,12 +1,12 @@
 ```markdown
-| Threat ID | Threat Description | ENISA Category | MITRE Technique | Affected Assets | Threat Actor | NIST ID.RA Reference |
-|-----------|--------------------|------------------|-------------------|-----------------|------------------|------------------------|
-| T001      | Ransomware targeting the Legacy MES system | Ransomware | T1486, T1566, T1190 | A002, A003 | Cybercriminals | ID.RA |
-| T002      | Malware infection through phishing emails to external contractors | Social Engineering | T1566.001 | A017 | Phishing Campaigns | ID.RA |
-| T003      | DDoS attacks targeting the VeloFleet API and Azure IoT Hub | Availability Attacks | T1498, T1499 | A007, A008 | Hacktivists | ID.RA |
-| T004      | Supply chain compromise through open-source repository abuse | Supply Chain Attacks | T1195.002, T1601 | A014, A018 | State-aligned Threat Groups | ID.RA |
-| T005      | Data exfiltration from the vehicle telemetry database | Data Threats | T1530 | A008 | Internal Insiders | ID.RA |
-| T006      | Insider threat accessing the R&D source code repository | Insider Threats | T1078, T1048 | A004 | Unauthorised Access | ID.RA |
-| T007      | Social engineering through AI-assisted phishing campaigns | Social Engineering | T1566.002 | A017 | Phishing Campaigns | ID.RA |
-| T008      | Malware in the CI/CD pipeline compromising build artifacts | Malware (incl. infostealers) | T1555, T1539 | A005 | Cybercriminals | ID.RA |
+| Threat ID | Threat | ENISA Category | MITRE Technique | Affected Assets | Threat Actor | NIST ID.RA Reference |
+|-----------|--------|----------------|-----------------|-----------------|--------------|----------------------|
+| 1         | Ransomware | Critical | T1486, T1566, T1190 | SAP S/4HANA ERP, CI/CD Pipeline, VeloFleet API, Telemetry DB | External Criminals | GV.PR.PS, GV.RM |
+| 2         | Malware (incl. infostealers) | High | T1555, T1539, T1485 | Legacy MES, R&D Repository, VeloFleet API, AI Model | State-aligned Threat Groups | GV.PR.PS, GV.RM |
+| 3         | Social Engineering | High | T1566.001, T1566.002 | Legacy MES, R&D Repository, CI/CD Pipeline, VPN Gateway | Phishers | GV.PR.AA, GV.RR |
+| 4         | Data Threats | Critical | T1530, T1048, T1213 | Telemetry DB, VeloFleet API | External Criminals | GV.GD, GV.PR.DS, GV.RM |
+| 5         | Availability Attacks (DDoS) | High | T1498, T1499 | VeloLink GWs, OT Plant Floor Reachable from Corporate LAN | Hacktivists | GV.PR.PS, GV.RM |
+| 6         | Supply Chain Attacks | Critical | T1195.002, T1199, T1601 | Third-party SaaS (e.g., GitHub Enterprise), VeloFleet API | State-aligned Threat Groups | GV.PR.SA, GV.RM |
+| 7         | Information Manipulation | Medium | T1565, T1195.002 | Publicly accessible data, Social Media | Foreign Information Manipulators (FIMI) | GV.GD, GV.PR.DS, GV.RR |
+| 8         | Insider Threats | High | T1078, T1048 | Legacy MES on Windows Server, MFA for External Contractors | Insiders/Unauthorised Personnel | GV.PR.AA, GV.RR |
 ```
