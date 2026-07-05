@@ -1,90 +1,68 @@
-### 12-Month Remediation Roadmap
+**Remediation Roadmap for Top Risks**
 
-#### **Risk: Social Engineering**
+| **Initiative** | **Timeline** | **Risks Addressed** | **NIST Controls** | **Estimated Cost** | **FTE** | **KPI** |
+| --- | --- | --- | --- | --- | --- | --- |
+| HSM Implementation | 6-8 weeks | R001, R002 | GV.RR, ID.AM.4 | $100k | 2 FTE | Secure key management in place by end of Q1 |
+| Legacy MES Upgrade | 12-14 weeks | R002 | ID.AM.2 | $200k | 3 FTE | Upgraded legacy MES by end of Q2 |
+| MFA Enforcement | 8-10 weeks | R003, R007 | ID.IM.7 | $50k | 1 FTE | Mandatory MFA for all employees by end of Q1 |
+| Network Segmentation | 12-14 weeks | R004 | ID.IM.5 | $150k | 2 FTE | Robust network segmentation in place by end of Q2 |
+| Vulnerability Scanning | 8-10 weeks | R006, R005 | ID.AM.8 | $30k | 1 FTE | Regular vulnerability scanning in place by end of Q1 |
+| Phishing Training | 4-6 weeks | R003 | ID.IM.7 | $20k | 0.5 FTE | Mandatory phishing training for all employees by end of Q1 |
 
-**Initiative:** Phishing Awareness and MFA Implementation
+**Executive Summary**
 
-**Timeline:**
-- Week 1-4: Training on phishing awareness for all employees.
-- Weeks 5-8: Implement MFA for external contractor access via VPN.
-- Weeks 9-12: Regular phishing simulations.
+Our organization faces significant cybersecurity risks, including ransomware attacks and insider threats. To mitigate these risks, we propose the following initiatives:
 
-**Risks Addressed:**
-- Social Engineering (High)
+*   Implement a Hardware Security Module (HSM) to secure key management
+*   Upgrade our Legacy MES to a supported operating system or migrate to cloud-based services
+*   Enforce Multi-Factor Authentication (MFA) for all employees
+*   Implement robust network segmentation and monitoring tools
 
-**NIST Controls:**
-- GV.PR.AA
-- GV.RR
-- GV.PR.PS
+These initiatives will address the top three risks and regulatory exposures, providing significant cost savings in the long run. We request an investment of $620k over 12 months, with a total of 10 FTE.
 
-**Estimated Cost:** $50,000
+**Cost of Inaction**
 
-**FTE:** 3 FTEs (1 for training, 2 for MFA setup and simulations)
+ Failure to address these risks can result in:
 
-**KPIs:**
-- Reduction in phishing simulation pass rate by 20%.
-- Increase in MFA adoption rate among external contractors.
+*   Data breaches and financial losses
+*   Regulatory non-compliance and fines
+*   Damage to reputation and brand
 
----
+By investing in these initiatives, we can mitigate these risks and ensure the security and integrity of our organization's data and systems.
 
-#### **Risk: Ransomware**
+**KPIs and Metrics**
 
-**Initiative:** Encryption, Backups, and Ransomware Drills
+We will track the following KPIs and metrics:
 
-**Timeline:**
-- Week 1-4: Encrypt all critical data (SAP S/4HANA ERP, VeloFleet API, Telemetry DB).
-- Weeks 5-8: Implement automated backups for all systems.
-- Weeks 9-12: Conduct ransomware drills.
+*   Secure key management in place by end of Q1
+*   Upgraded legacy MES by end of Q2
+*   Mandatory MFA for all employees by end of Q1
+*   Robust network segmentation in place by end of Q2
+*   Regular vulnerability scanning in place by end of Q1
 
-**Risks Addressed:**
-- Ransomware (High)
+These metrics will be reviewed quarterly, and adjustments made as necessary.
 
-**NIST Controls:**
-- GV.PR.PS
-- GV.PR.RM
-- GV.GD
+**Regulatory Exposure**
 
-**Estimated Cost:** $75,000
+Our organization is exposed to the following regulations:
 
-**FTE:** 3 FTEs (1 for encryption and backups, 2 for ransomware drills)
+*   UNECE WP.29 R155/R156 (Section 5, Secure Key Management; Section 3, Network and System Security)
+*   NIS2 Directive (Art. 21, Cybersecurity Measures; Art. 14, Access Control and Identity Management)
+*   GDPR (Article 32, Security of Processing)
 
-**KPIs:**
-- Completion of 100% data encryption.
-- Successful execution of at least 8 out of 10 ransomware drills.
+By addressing these risks, we can ensure compliance with these regulations and avoid associated fines and penalties.
 
----
+**Conclusion**
 
-#### **Risk: Supply Chain Attacks**
+In conclusion, our organization faces significant cybersecurity risks that must be addressed promptly. We propose the following initiatives to mitigate these risks:
 
-**Initiative:** Vendor Security Review and Audits
+*   Implement a Hardware Security Module (HSM) to secure key management
+*   Upgrade our Legacy MES to a supported operating system or migrate to cloud-based services
+*   Enforce Multi-Factor Authentication (MFA) for all employees
+*   Implement robust network segmentation and monitoring tools
 
-**Timeline:**
-- Week 1-4: Conduct a thorough review of third-party contracts.
-- Weeks 5-8: Implement regular security audits for critical suppliers.
-- Weeks 9-12: Update vendor management policies.
+These initiatives will address the top three risks, regulatory exposures, and provide significant cost savings in the long run. We request an investment of $620k over 12 months, with a total of 10 FTE.
 
-**Risks Addressed:**
-- Supply Chain Attacks (High)
+**Recommendations**
 
-**NIST Controls:**
-- GV.PR.SD
-- GV.PR.PS
-- GV.PR.RM
-
-**Estimated Cost:** $40,000
-
-**FTE:** 2 FTEs (1 for review and updates, 1 for regular audits)
-
-**KPIs:**
-- Completion of 100% vendor security contract compliance.
-- Successful completion of at least 6 out of 8 regular security audits.
-
----
-
-### Executive Summary
-
-Velocito faces three critical risks: Social Engineering, Ransomware, and Supply Chain Attacks. These risks expose the company to significant financial penalties and regulatory non-compliance. If left unaddressed, these risks could result in costs exceeding $150,000 annually. We propose a 12-month remediation roadmap with estimated costs of $165,000 and an investment request of $170,000.
-
-The proposed actions include training employees on phishing awareness, implementing MFA for external contractors, encrypting critical data, conducting regular backups and ransomware drills, reviewing third-party contracts, and updating vendor management policies. These initiatives will mitigate the identified risks, ensure compliance with regulatory requirements, and protect Velocito's sensitive information.
-
-We believe that these investments are crucial to safeguard our business operations and maintain a strong reputation in the industry. The estimated return on investment (ROI) is expected to be 100% within two years, making this an excellent opportunity for long-term growth and security.
+We recommend that the board approve these initiatives to mitigate our organization's cybersecurity risks and ensure compliance with relevant regulations.

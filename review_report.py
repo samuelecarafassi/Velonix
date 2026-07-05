@@ -38,7 +38,7 @@ Output markdown.
 """
 
 
-def ask_ai(prompt: str,model_name = "qwen2.5-coder:7b") -> str:
+def ask_ai(prompt: str,model_name = "llama3.1:8b") -> str:
 
     # Configure a clean HTTP API request to the local Ollama instance
     url = "http://localhost:11434/api/generate"

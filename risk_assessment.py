@@ -32,7 +32,7 @@ Rules:
 """
 
 
-def ask_ai(prompt: str, context: str = "",model_name = "qwen2.5-coder:7b") -> str:
+def ask_ai(prompt: str, context: str = "",model_name = "llama3.1:8b") -> str:
     full_prompt = f"""
 {SYSTEM_PROMPT}
 

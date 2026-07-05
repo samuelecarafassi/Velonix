@@ -1,43 +1,34 @@
-### ISO 27005 Risk Assessment
+**phase5_riskassessment.md**
+=====================================
 
-| Risk ID | Threat | Likelihood (1-5) | Impact (1-5) | Inherent Risk (5) | Existing Controls | Residual Risk (3) | Owner | Risk Class |
-|---------|--------|--------------------|--------------|-------------------|-------------------|-------------------|-------|------------|
-| 1.1     | Ransomware on SAP S/4HANA ERP | 2 | 4 | 8                 | Encryption, Regular Backups | 5               | IT    | Low        |
-| 1.2     | Ransomware on CI/CD Pipeline   | 3 | 4 | 12                | Automated Security Checks | 7               | DevOps| Medium     |
-| 1.3     | Ransomware on VeloFleet API    | 2 | 4 | 8                 | Encryption, Regular Backups | 5               | DevOps| Low        |
-| 1.4     | Ransomware on Telemetry DB      | 3 | 4 | 12                | Regular Data Encryption | 7               | IT    | Medium     |
-| 2.1     | Malware on Legacy MES          | 3 | 4 | 12                | Antivirus, Security Patches | 7               | OT    | Medium     |
-| 2.2     | Malware on R&D Repository      | 3 | 4 | 12                | Antivirus, Security Patches | 7               | R&D   | Medium     |
-| 2.3     | Malware on VeloFleet API        | 3 | 4 | 12                | Encryption, Regular Backups | 7               | DevOps| Medium     |
-| 2.4     | Malware on AI Model             | 3 | 4 | 12                | Antivirus, Security Patches | 7               | R&D   | Medium     |
-| 3.1     | Social Engineering on Legacy MES | 4 | 4 | 16                | MFA, Access Controls | 9               | OT    | High       |
-| 3.2     | Social Engineering on R&D Repository | 4 | 4 | 16                | MFA, Access Controls | 9               | R&D   | High       |
-| 3.3     | Social Engineering on CI/CD Pipeline | 4 | 4 | 16                | MFA, Access Controls | 9               | DevOps| High       |
-| 3.4     | Social Engineering on VPN Gateway | 4 | 4 | 16                | MFA, Access Controls | 9               | IT    | High       |
-| 4.1     | Data Threats on Telemetry DB   | 3 | 5 | 15                | Encryption, Regular Backups | 8               | IT    | Medium     |
-| 4.2     | Data Threats on VeloFleet API    | 3 | 5 | 15                | Regular Data Encryption | 8               | DevOps| Medium     |
-| 5.1     | DDoS Attacks on VeloLink GWs   | 4 | 4 | 16                | Firewall, Load Balancers | 9               | Field Ops| High       |
-| 5.2     | DDoS Attacks on OT Plant Floor Reachable from Corporate LAN | 3 | 4 | 12                | Improved OT/IT Segmentation | 7               | IT    | Medium     |
-| 6.1     | Supply Chain Attacks on GitHub Enterprise | 4 | 5 | 20                | Regular Security Audits | 10              | DevOps| High       |
-| 6.2     | Supply Chain Attacks on Third-party SaaS (e.g., VeloFleet API) | 3 | 5 | 15                | Regular Vendor Assessments | 8               | DevOps| Medium     |
-| 7.1     | Information Manipulation on Publicly Accessible Data | 2 | 4 | 8                 | Strong Access Controls | 5               | IT    | Low        |
-| 7.2     | Information Manipulation on Social Media | 3 | 4 | 12                | Regular Monitoring | 7               | IT    | Medium     |
-| 8.1     | Insider Threats on Legacy MES   | 3 | 5 | 15                | Strong Access Controls | 9               | OT    | High       |
-| 8.2     | Insider Threats on MFA for External Contractors | 4 | 4 | 16                | Enhanced Access Controls | 10              | IT    | High       |
+| **Risk ID** | **Threat** | **Likelihood (1-5)** | **Impact (1-5)** | **Inherent Risk** | **Existing Controls** | **Residual Risk** | **Owner** | **Risk Class** |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1. R001 | Velonix-Ransomware-1 | 5 (High) | 5 (High) | 25 | Backup, Incident Response Plan | 20/25 | IT Department | High |
+| 2. R002 | Velonix-Malware-1 | 4 (Medium-High) | 5 (High) | 20 | Antivirus Software, Firewall | 16/20 | IT Department | Medium-High |
+| 3. R003 | Velonix-Social-1 | 3 (Medium) | 3 (Medium) | 9 | Phishing Training, MFA Enforcement | 6/9 | IT Department | Medium |
+| 4. R004 | Velonix-Ransomware-2 | 5 (High) | 5 (High) | 25 | Backup, Incident Response Plan | 20/25 | IT Department | High |
+| 5. R005 | Velonix-DDoS-1 | 4 (Medium-High) | 4 (Medium-High) | 16 | DDoS Protection Service, Firewall | 12/16 | IT Department | Medium-High |
+| 6. R006 | Velonix-Supply-Chain-1 | 2 (Low-Medium) | 5 (High) | 10 | Vulnerability Scanning, Penetration Testing | 8/10 | Security Team | Low-Medium |
+| 7. R007 | Velonix-Inform-1 | 3 (Medium) | 4 (Medium-High) | 12 | Monitoring Tools, Access Controls | 9/12 | IT Department | Medium |
+| 8. R008 | Velonix-Insider-1 | 5 (High) | 4 (Medium-High) | 20 | Background Checks, Access Controls | 16/20 | HR Department | High |
 
-### Residual-Risk Heat Map
+**Residual Risk Heat Map**
 
-| Risk Class  | Low | Medium | High |
-|-------------|-----|--------|------|
-| Ransomware    |     |        | 🟥   |
-| Malware       |     | 🟠     |      |
-| Social Engineering | 🟥  |        |      |
-| Data Threats  | 🟠  |        |      |
-| Availability Attacks | 🟥 | 🟠     |      |
-| Supply Chain Attacks | 🟥 |        |      |
-| Information Manipulation | 🟠 | 🟠    |      |
-| Insider Threats | 🟥  | 🟠    |      |
+| **Risk ID** | **Threat** | **Likelihood × Impact** | **Existing Controls** | **Residual Risk** |
+| --- | --- | --- | --- | --- |
+| R001 | Velonix-Ransomware-1 | 25 (High) | Backup, Incident Response Plan | 20/25 (Medium-High) |
+| R002 | Velonix-Malware-1 | 20 (Medium-High) | Antivirus Software, Firewall | 16/20 (Medium) |
+| R003 | Velonix-Social-1 | 9 (Medium) | Phishing Training, MFA Enforcement | 6/9 (Low-Medium) |
+| R004 | Velonix-Ransomware-2 | 25 (High) | Backup, Incident Response Plan | 20/25 (Medium-High) |
+| R005 | Velonix-DDoS-1 | 16 (Medium-High) | DDoS Protection Service, Firewall | 12/16 (Medium) |
+| R006 | Velonix-Supply-Chain-1 | 10 (Low-Medium) | Vulnerability Scanning, Penetration Testing | 8/10 (Low) |
+| R007 | Velonix-Inform-1 | 12 (Medium) | Monitoring Tools, Access Controls | 9/12 (Low-Medium) |
+| R008 | Velonix-Insider-1 | 20 (High) | Background Checks, Access Controls | 16/20 (High) |
 
-**Legend:**
-- 🟥 : High Residual Risk
-- 🟠 : Medium Residual Risk
+Residual risk classification:
+
+*   Low: ≤10
+*   Medium-Low: 11-15
+*   Medium: 16-20
+*   Medium-High: 21-25
+*   High: ≥26

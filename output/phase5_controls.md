@@ -1,61 +1,59 @@
-### Top Risks and Remediation Controls
+**Remediation Controls for Top Risks**
+=====================================
 
-#### 1. **Social Engineering (Risk Class: High)**
-**Threat:** Phishers targeting Legacy MES, R&D Repository, CI/CD Pipeline, VPN Gateway.
+| **Risk ID** | **Control** | **NIST CSF Reference** | **Priority** | **Effort** | **Regulatory Benefit** |
+| --- | --- | --- | --- | --- | --- |
+| R001 | Implement HSM for secure key management; use automated signing tools | GV.RR, ID.AM.4 | High | 8/10 | UNECE WP.29 R155/R156 (Section 5) |
+| R002 | Upgrade Legacy MES to supported OS or migrate to cloud-based services | ID.AM.2 | High | 9/10 | NIS2 Directive (Art. 21); UNECE WP.29 R155/R156 (Section 3) |
+| R003 | Enforce MFA for all users, including contractors; regular review and update of access controls | ID.IM.7 | Medium-High | 6/10 | GDPR (Article 32); NIS2 Directive (Art. 14) |
+| R004 | Implement robust network segmentation; monitor and restrict unnecessary communication between IT and OT networks | ID.IM.5 | High | 8/10 | UNECE WP.29 R155/R156 (Section 7) |
+| R005 | Conduct regular vulnerability scanning and penetration testing on all assets | ID.AM.8 | Medium-High | 7/10 | NIS2 Directive (Art. 21); GDPR (Article 32) |
 
-**Control:**
-| NIST CSF Reference | Priority | Effort | Regulatory Benefit |
-|--------------------|----------|--------|----------------------|
-| GV.PR.AA             | High     | Medium | Compliance with GDPR and UNECE WP.29 R156 |
-| GV.RR                | High     | Medium | Compliance with NIS2 Directive and ISO/SAE 21434 |
-| GV.PR.PS             | High     | Low    | Mitigation of potential ransomware attacks |
+**Quick Wins (< 2 weeks)**
+---------------------------
 
-**Regulatory Exposure Summary:**
-- **GDPR:** Prevents data breaches by requiring strong access controls.
-- **UNECE WP.29 R156:** Requires organizations to implement robust security measures against social engineering.
-- **NIS2 Directive:** Mandates compliance with UNECE WP.29 R156 and GDPR.
+| **Risk ID** | **Control** | **NIST CSF Reference** | **Priority** | **Effort** | **Regulatory Benefit** |
+| --- | --- | --- | --- | --- | --- |
+| R003 | Implement Phishing Training for all employees | ID.IM.7 | Low-Medium | 3/10 | GDPR (Article 32); NIS2 Directive (Art. 14) |
+| R006 | Maintain accurate and up-to-date SBOMs for all assets | ID.AM.8 | Medium-Low | 4/10 | UNECE WP.29 R155/R156 (Section 5) |
+| R007 | Enforce MFA for all employees; regular review and update of access controls | ID.IM.7 | Medium-High | 6/10 | GDPR (Article 32); NIS2 Directive (Art. 14) |
+| R008 | Conduct regular monitoring and incident response planning for all assets | ID.RA.4 | Medium-Low | 5/10 | UNECE WP.29 R155/R156 (Section 3) |
+| R005 | Implement DDoS Protection Service for all IT assets | ID.IM.5 | Medium-High | 7/10 | NIS2 Directive (Art. 21); GDPR (Article 32) |
 
-**Quick Wins (< 2 weeks):**
-1. Implement MFA for all external contractor access via VPN.
-2. Provide training on phishing awareness for key stakeholders.
-3. Conduct regular phishing simulations to test employee response.
+**Regulatory Exposure Summary**
+------------------------------
 
-#### 2. **Ransomware (Risk Class: High)**
-**Threat:** External Criminals targeting SAP S/4HANA ERP, CI/CD Pipeline, VeloFleet API, Telemetry DB.
+*   UNECE WP.29 R155/R156: 4 out of 8 top risks are addressed by the regulations.
+*   NIS2 Directive: 3 out of 8 top risks are addressed by the regulations.
+*   GDPR: 5 out of 8 top risks are addressed by the regulations.
 
-**Control:**
-| NIST CSF Reference | Priority | Effort | Regulatory Benefit |
-|--------------------|----------|--------|----------------------|
-| GV.PR.PS             | High     | Medium | Compliance with GDPR and UNECE WP.29 R156 |
-| GV.PR.RM             | High     | Low    | Reduces financial penalties |
-| GV.GD                | High     | Low    | Ensures data protection compliance |
+**UNECE R155/R156 Mapping**
+---------------------------
 
-**Regulatory Exposure Summary:**
-- **GDPR:** Requires strong encryption and regular backups to prevent ransomware-induced data loss.
-- **UNECE WP.29 R156:** Mandates implementation of robust security measures against ransomware.
-- **NIS2 Directive:** Requires compliance with GDPR, UNECE WP.29 R156.
+| **Risk ID** | **UNECE WP.29 R155/R156 Reference** |
+| --- | --- |
+| R001 | Section 5 (Secure Key Management) |
+| R002 | Section 3 (Network and System Security) |
+| R004 | Section 7 (Network Segmentation) |
 
-**Quick Wins (< 2 weeks):**
-1. Encrypt all critical data (SAP S/4HANA ERP, VeloFleet API, Telemetry DB).
-2. Implement automated backups for all systems.
-3. Conduct ransomware drills to test recovery plans.
+**NIS2 Mapping**
+----------------
 
-#### 3. **Supply Chain Attacks (Risk Class: High)**
-**Threat:** External Criminals targeting GitHub Enterprise and Third-party SaaS (e.g., VeloFleet API).
+| **Risk ID** | **NIS2 Directive Reference** |
+| --- | --- |
+| R001 | Art. 21 (Cybersecurity Measures) |
+| R002 | Art. 21 (Cybersecurity Measures) |
+| R003 | Art. 14 (Access Control and Identity Management) |
 
-**Control:**
-| NIST CSF Reference | Priority | Effort | Regulatory Benefit |
-|--------------------|----------|--------|----------------------|
-| GV.PR.SD             | High     | Medium | Compliance with GDPR and UNECE WP.29 R156 |
-| GV.PR.PS             | High     | Low    | Reduces financial penalties |
-| GV.PR.RM             | High     | Low    | Ensures data protection compliance |
+**GDPR Mapping**
+----------------
 
-**Regulatory Exposure Summary:**
-- **GDPR:** Requires regular security audits to identify and mitigate vulnerabilities.
-- **UNECE WP.29 R156:** Mandates implementation of robust supply chain security measures.
-- **NIS2 Directive:** Requires compliance with GDPR, UNECE WP.29 R156.
+| **Risk ID** | **GDPR Reference** |
+| --- | --- |
+| R001 | Article 32 (Security of Processing) |
+| R002 | Article 32 (Security of Processing) |
+| R003 | Article 32 (Security of Processing) |
+| R004 | Article 32 (Security of Processing) |
+| R005 | Article 32 (Security of Processing) |
 
-**Quick Wins (< 2 weeks):**
-1. Conduct a thorough review and update of third-party contracts.
-2. Implement regular security audits for all critical suppliers.
-3. Update vendor management policies to include robust security requirements.
+Note: This is a high-level summary and actual remediation efforts may vary based on specific organizational requirements.
